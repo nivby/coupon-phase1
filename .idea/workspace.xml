@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c186e095-5b4d-4f64-b15e-14bf5c4ff782" name="Default Changelist" comment="" />
+    <list default="true" id="c186e095-5b4d-4f64-b15e-14bf5c4ff782" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exception/LimitException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CouponDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CouponDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbdao/CompanyDBDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbdao/CompanyDBDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbdao/CouponDBDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbdao/CouponDBDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbdao/CustomerDBDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbdao/CustomerDBDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exception/ValidException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exception/ValidException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/CustomerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/CustomerDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dbdao/CompanyDBDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dbdao/CompanyDBDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dbdao/CouponDBDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dbdao/CouponDBDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dbdao/CustomerDBDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dbdao/CustomerDBDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Run.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Run.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,28 +28,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dbdao/CouponDBDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
+            <state relative-caret-position="-253">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#!!block;n#CouponDBDAO#0;n#CouponDBDAO#0" />
                 <element signature="method#buildCoupon#0;class#CouponDBDAO#0" />
+                <element signature="method#addCouponPurchase#0;class#CouponDBDAO#0" />
+                <element signature="e#1291#1322#0" />
+                <element signature="e#1358#1400#0" />
+                <element signature="e#0#34#2" />
+                <element signature="e#0#67#1" />
+                <element signature="e#1787#1832#0" />
+                <element signature="e#1941#1978#1" />
+                <element signature="e#2221#2263#0" />
+                <element signature="e#2279#2335#0" />
+                <element signature="method#deleteCouponPurchase#0;class#CouponDBDAO#0" />
+                <element signature="e#0#72#1" />
+                <element signature="e#2693#2747#0" />
+                <element signature="e#2839#2877#0" />
+                <element signature="e#2891#2914#0" />
                 <element signature="method#create#0;class#CouponDBDAO#0" />
+                <element signature="e#0#127#1" />
+                <element signature="e#101#127#0" />
+                <element signature="e#108#127#0" />
+                <element signature="e#1530#2226#0" />
+                <element signature="e#2153#2216#1" />
+                <element signature="e#2248#2292#0" />
+                <element signature="e#2309#2367#0" />
                 <element signature="method#getById#0;class#CouponDBDAO#0" />
+                <element signature="e#0#34#2" />
+                <element signature="e#2722#2924#0" />
+                <element signature="e#2850#2914#1" />
+                <element signature="e#2947#2991#0" />
+                <element signature="e#3008#3066#0" />
+                <element signature="method#update#0;class#CouponDBDAO#0" />
+                <element signature="e#0#88#1" />
+                <element signature="e#3469#3765#0" />
+                <element signature="e#3982#4026#0" />
+                <element signature="e#4043#4101#0" />
                 <element signature="method#delete#0;class#CouponDBDAO#0" />
+                <element signature="e#4076#4107#1" />
+                <element signature="e#0#32#1" />
+                <element signature="e#4409#4634#0" />
+                <element signature="e#4569#4627#1" />
+                <element signature="e#4656#4694#0" />
+                <element signature="e#4708#4760#0" />
                 <element signature="method#getall#0;class#CouponDBDAO#0" />
+                <element signature="e#0#21#2" />
+                <element signature="e#5063#5335#0" />
+                <element signature="e#5155#5224#1" />
+                <element signature="e#5268#5326#1" />
+                <element signature="e#5357#5399#0" />
+                <element signature="e#5415#5471#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/CompanyDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/CouponDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="195">
+              <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,68 +103,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/Run.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="24" column="83" selection-start-line="24" selection-start-column="83" selection-end-line="24" selection-end-column="83" />
+            <state relative-caret-position="118">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entities/Coupon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-              <folding>
-                <element signature="e#2117#2118#0" expanded="true" />
-                <element signature="e#2149#2150#0" expanded="true" />
-                <element signature="e#2186#2187#0" expanded="true" />
-                <element signature="e#2216#2217#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/categories/Category.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dbdao/CompanyDBDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#buildCompany#0;class#CompanyDBDAO#0" />
-                <element signature="method#isCompanyExsist#0;class#CompanyDBDAO#0" />
-                <element signature="method#create#0;class#CompanyDBDAO#0" />
-                <element signature="method#getByID#0;class#CompanyDBDAO#0" />
-                <element signature="method#getByName#0;class#CompanyDBDAO#0" />
-                <element signature="method#update#0;class#CompanyDBDAO#0" />
-                <element signature="method#getAll#0;class#CompanyDBDAO#0" />
-                <element signature="e#7263#7264#0" expanded="true" />
-                <element signature="e#7291#7292#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/exception/ValidException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding>
-                <element signature="e#97#98#0" expanded="true" />
-                <element signature="e#120#121#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,6 +123,14 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>isC</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -132,18 +141,19 @@
         <option value="$PROJECT_DIR$/src/main/java/entities/Company.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/AlreadyExistException.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/NotExistException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/CouponDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/Customers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/CustomerDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dbdao/CustomerDBDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/categories/Category.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/Coupon.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dbdao/CouponDBDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/ValidException/ValidException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/exception/ValidException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/main/Run.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dbdao/CompanyDBDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/CompanyDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/CustomerDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dbdao/CustomerDBDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dbdao/CompanyDBDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/Run.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exception/LimitException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exception/ValidException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/CouponDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dbdao/CouponDBDAO.java" />
       </list>
     </option>
   </component>
@@ -160,6 +170,7 @@
     <option name="width" value="1890" />
     <option name="height" value="960" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -249,14 +260,15 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582479043990" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582555248203" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="exception.ValidException" />
       <recent name="exception" />
+      <recent name="exception.ValidException" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -304,17 +316,26 @@
       <workItem from="1581850051722" duration="19248000" />
       <workItem from="1582103184850" duration="18099000" />
       <workItem from="1582444296614" duration="9741000" />
+      <workItem from="1582481443845" duration="5354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47088000" />
+    <option name="totallyTimeSpent" value="53700000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26153848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -322,16 +343,16 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.327787" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.327787" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3285968" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3294509" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3285968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -354,17 +375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exception/NotExistException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="e#116#117#0" expanded="true" />
-            <element signature="e#146#147#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -407,48 +417,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exception/AlreadyExistException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="e#124#125#0" expanded="true" />
-            <element signature="e#154#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pool/ConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dbdao/CustomerDBDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="158" column="28" selection-start-line="158" selection-start-column="28" selection-end-line="158" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#buildCustomer#0;class#CustomerDBDAO#0" />
-            <element signature="method#create#0;class#CustomerDBDAO#0" />
-            <element signature="method#getById#0;class#CustomerDBDAO#0" />
-            <element signature="method#getByName#0;class#CustomerDBDAO#0" />
-            <element signature="method#update#0;class#CustomerDBDAO#0" />
-            <element signature="method#delete#0;class#CustomerDBDAO#0" />
-            <element signature="method#getAll#0;class#CustomerDBDAO#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CustomerDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -462,73 +434,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CouponDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/categories/Category.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state>
           <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entities/Coupon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
+        <state relative-caret-position="-83">
           <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding>
-            <element signature="e#2117#2118#0" expanded="true" />
-            <element signature="e#2149#2150#0" expanded="true" />
-            <element signature="e#2186#2187#0" expanded="true" />
-            <element signature="e#2216#2217#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exception/ValidException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding>
-            <element signature="e#97#98#0" expanded="true" />
-            <element signature="e#120#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dbdao/CouponDBDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#buildCoupon#0;class#CouponDBDAO#0" />
-            <element signature="method#create#0;class#CouponDBDAO#0" />
-            <element signature="method#getById#0;class#CouponDBDAO#0" />
-            <element signature="method#delete#0;class#CouponDBDAO#0" />
-            <element signature="method#getall#0;class#CouponDBDAO#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/Run.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="24" column="83" selection-start-line="24" selection-start-column="83" selection-end-line="24" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/CompanyDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -537,19 +460,238 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dbdao/CompanyDBDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="88">
+          <caret line="183" column="34" selection-start-line="183" selection-start-column="34" selection-end-line="183" selection-end-column="34" />
+          <folding>
+            <element signature="method#buildCompany#0;class#CompanyDBDAO#0" />
+            <element signature="method#isCompanyExist#0;class#CompanyDBDAO#0" />
+            <element signature="e#0#56#2" />
+            <element signature="e#1123#1421#0" />
+            <element signature="e#1301#1411#1" />
+            <element signature="e#1445#1485#0" />
+            <element signature="e#1492#1542#0" />
+            <element signature="method#create#0;class#CompanyDBDAO#0" />
+            <element signature="e#0#56#1" />
+            <element signature="e#43#56#0" />
+            <element signature="e#1926#2297#0" />
+            <element signature="e#2218#2286#1" />
+            <element signature="e#2321#2365#0" />
+            <element signature="e#2374#2432#0" />
+            <element signature="method#getByID#0;class#CompanyDBDAO#0" />
+            <element signature="e#0#36#2" />
+            <element signature="e#2760#3142#0" />
+            <element signature="e#2889#3131#1" />
+            <element signature="e#3164#3208#0" />
+            <element signature="e#3225#3283#0" />
+            <element signature="method#getByName#0;class#CompanyDBDAO#0" />
+            <element signature="e#0#38#2" />
+            <element signature="e#3620#3824#0" />
+            <element signature="e#3748#3814#1" />
+            <element signature="e#3847#3891#0" />
+            <element signature="e#3908#3966#0" />
+            <element signature="method#update#0;class#CompanyDBDAO#0" />
+            <element signature="e#4128#4205#1" />
+            <element signature="e#0#66#1" />
+            <element signature="e#4475#4737#0" />
+            <element signature="e#4946#4990#0" />
+            <element signature="e#4999#5057#0" />
+            <element signature="method#delete#0;class#CompanyDBDAO#0" />
+            <element signature="e#5212#5288#1" />
+            <element signature="e#0#34#1" />
+            <element signature="e#5499#5724#0" />
+            <element signature="e#5657#5715#1" />
+            <element signature="e#5747#5787#0" />
+            <element signature="e#5802#5856#0" />
+            <element signature="method#getAll#0;class#CompanyDBDAO#0" />
+            <element signature="e#0#23#2" />
+            <element signature="e#6167#6447#0" />
+            <element signature="e#6259#6332#1" />
+            <element signature="e#6380#6438#1" />
+            <element signature="e#6469#6511#0" />
+            <element signature="e#6527#6583#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dbdao/CustomerDBDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!block;n#CustomerDBDAO#0;n#CustomerDBDAO#0" />
+            <element signature="method#buildCustomer#0;class#CustomerDBDAO#0" />
+            <element signature="method#isCustomerExist#0;class#CustomerDBDAO#0" />
+            <element signature="e#0#56#2" />
+            <element signature="e#1218#1446#0" />
+            <element signature="e#1404#1444#1" />
+            <element signature="e#1544#1588#0" />
+            <element signature="e#1605#1633#0" />
+            <element signature="method#create#0;class#CustomerDBDAO#0" />
+            <element signature="e#0#73#1" />
+            <element signature="e#58#73#0" />
+            <element signature="e#1186#1613#0" />
+            <element signature="e#1538#1603#1" />
+            <element signature="e#1635#1679#0" />
+            <element signature="e#1696#1754#0" />
+            <element signature="method#getById#0;class#CustomerDBDAO#0" />
+            <element signature="e#0#36#2" />
+            <element signature="e#2087#2292#0" />
+            <element signature="e#2214#2282#1" />
+            <element signature="e#2314#2358#0" />
+            <element signature="e#2375#2433#0" />
+            <element signature="method#getByName#0;class#CustomerDBDAO#0" />
+            <element signature="e#0#44#0" />
+            <element signature="e#2817#3260#0" />
+            <element signature="e#2995#3250#1" />
+            <element signature="e#3282#3326#0" />
+            <element signature="e#3343#3401#0" />
+            <element signature="method#update#0;class#CustomerDBDAO#0" />
+            <element signature="e#0#84#1" />
+            <element signature="e#3778#4103#0" />
+            <element signature="e#4280#4324#0" />
+            <element signature="e#4341#4399#0" />
+            <element signature="method#delete#0;class#CustomerDBDAO#0" />
+            <element signature="e#4420#4451#1" />
+            <element signature="e#0#34#1" />
+            <element signature="e#4749#5040#0" />
+            <element signature="e#4966#5030#1" />
+            <element signature="e#5062#5106#0" />
+            <element signature="e#5123#5181#0" />
+            <element signature="method#getAll#0;class#CustomerDBDAO#0" />
+            <element signature="e#0#23#2" />
+            <element signature="e#5486#5752#0" />
+            <element signature="e#5574#5644#1" />
+            <element signature="e#5691#5745#1" />
+            <element signature="e#5774#5812#0" />
+            <element signature="e#5826#5878#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CustomerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="83" selection-start-line="11" selection-start-column="83" selection-end-line="11" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#buildCompany#0;class#CompanyDBDAO#0" />
-            <element signature="method#isCompanyExsist#0;class#CompanyDBDAO#0" />
-            <element signature="method#create#0;class#CompanyDBDAO#0" />
-            <element signature="method#getByID#0;class#CompanyDBDAO#0" />
-            <element signature="method#getByName#0;class#CompanyDBDAO#0" />
-            <element signature="method#update#0;class#CompanyDBDAO#0" />
-            <element signature="method#getAll#0;class#CompanyDBDAO#0" />
-            <element signature="e#7263#7264#0" expanded="true" />
-            <element signature="e#7291#7292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exception/LimitException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding>
+            <element signature="e#136#137#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exception/AlreadyExistException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <element signature="e#124#125#0" expanded="true" />
+            <element signature="e#154#155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exception/NotExistException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <element signature="e#116#117#0" expanded="true" />
+            <element signature="e#146#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exception/ValidException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/Run.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CouponDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dbdao/CouponDBDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-253">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="n#!!block;n#CouponDBDAO#0;n#CouponDBDAO#0" />
+            <element signature="method#buildCoupon#0;class#CouponDBDAO#0" />
+            <element signature="method#addCouponPurchase#0;class#CouponDBDAO#0" />
+            <element signature="e#1291#1322#0" />
+            <element signature="e#1358#1400#0" />
+            <element signature="e#0#34#2" />
+            <element signature="e#0#67#1" />
+            <element signature="e#1787#1832#0" />
+            <element signature="e#1941#1978#1" />
+            <element signature="e#2221#2263#0" />
+            <element signature="e#2279#2335#0" />
+            <element signature="method#deleteCouponPurchase#0;class#CouponDBDAO#0" />
+            <element signature="e#0#72#1" />
+            <element signature="e#2693#2747#0" />
+            <element signature="e#2839#2877#0" />
+            <element signature="e#2891#2914#0" />
+            <element signature="method#create#0;class#CouponDBDAO#0" />
+            <element signature="e#0#127#1" />
+            <element signature="e#101#127#0" />
+            <element signature="e#108#127#0" />
+            <element signature="e#1530#2226#0" />
+            <element signature="e#2153#2216#1" />
+            <element signature="e#2248#2292#0" />
+            <element signature="e#2309#2367#0" />
+            <element signature="method#getById#0;class#CouponDBDAO#0" />
+            <element signature="e#0#34#2" />
+            <element signature="e#2722#2924#0" />
+            <element signature="e#2850#2914#1" />
+            <element signature="e#2947#2991#0" />
+            <element signature="e#3008#3066#0" />
+            <element signature="method#update#0;class#CouponDBDAO#0" />
+            <element signature="e#0#88#1" />
+            <element signature="e#3469#3765#0" />
+            <element signature="e#3982#4026#0" />
+            <element signature="e#4043#4101#0" />
+            <element signature="method#delete#0;class#CouponDBDAO#0" />
+            <element signature="e#4076#4107#1" />
+            <element signature="e#0#32#1" />
+            <element signature="e#4409#4634#0" />
+            <element signature="e#4569#4627#1" />
+            <element signature="e#4656#4694#0" />
+            <element signature="e#4708#4760#0" />
+            <element signature="method#getall#0;class#CouponDBDAO#0" />
+            <element signature="e#0#21#2" />
+            <element signature="e#5063#5335#0" />
+            <element signature="e#5155#5224#1" />
+            <element signature="e#5268#5326#1" />
+            <element signature="e#5357#5399#0" />
+            <element signature="e#5415#5471#0" />
           </folding>
         </state>
       </provider>

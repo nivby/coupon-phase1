@@ -29,6 +29,32 @@ public class CustomerDBDAO implements CustomerDAO {
     }
 
     @Override
+    public boolean isCustomerExist(String email, String password) throws NotExistException {
+
+       boolean isCustomerExist = false;
+       Connection connection = pool.getConnection();
+       Customer customer = null;
+       String sql = "SELECT * FROM CUSTOMERS WHERE EMAIL = ? AND PASSWORD = ?";
+
+        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
+            pstmt.setString(1,email);
+            pstmt.setString(2,password);
+
+            ResultSet resultSet = pstmt.executeQuery();
+            while (resultSet.next()){
+                customer = buildCustomer(resultSet);
+                isCustomerExist = true;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            pool.returnConnection(connection);
+        }
+        return isCustomerExist;
+    }
+
+    @Override
     public Customer create(Customer customer) throws AlreadyExistException {
 
         Connection connection = pool.getConnection();
@@ -108,7 +134,7 @@ public class CustomerDBDAO implements CustomerDAO {
     @Override
     public Customer update(Customer customer) throws NotExistException {
         Connection connection = pool.getConnection();
-        String sql = "UPDATE FROM CUSTOMERS WHERE FIRST_NAME = ?,LAST_NAME = ?,EMAIL = ?,PASSWORD = ?" +
+        String sql = "UPDATE CUSTOMERS set FIRST_NAME = ?,LAST_NAME = ?,EMAIL = ?,PASSWORD = ?" +
                 "WHERE ID = ?";
 
         try(PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -119,10 +145,6 @@ public class CustomerDBDAO implements CustomerDAO {
             pstmt.setLong(5,customer.getId());
 
             pstmt.executeUpdate();
-            ResultSet resultSet = pstmt.executeQuery();
-            while (resultSet.next()){
-                customer = buildCustomer(resultSet);
-            }
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -133,8 +155,11 @@ public class CustomerDBDAO implements CustomerDAO {
     }
 
     @Override
-    public Customer delete(Customer customer) throws NotExistException {
-
+    public Customer delete(long id) throws NotExistException {
+        Customer customer = getById(id);
+        if (customer == null){
+            return null;
+        }
         Connection connection = pool.getConnection();
         String sql = "DELETE FROM CUSTOMERS WHERE ID = ?";
 

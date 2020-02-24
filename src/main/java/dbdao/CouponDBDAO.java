@@ -3,6 +3,7 @@ package dbdao;
 import dao.CouponDAO;
 import entities.Coupon;
 import exception.AlreadyExistException;
+import exception.LimitException;
 import exception.NotExistException;
 import pool.ConnectionPool;
 
@@ -34,6 +35,59 @@ public class CouponDBDAO implements CouponDAO {
         return  new Coupon(id,categoryId,categoryId,title,description,startDate,endDate,amount,price,image);
     }
 
+
+    @Override
+    public Coupon addCouponPurchase(long customerId, long couponId) throws LimitException {
+       Coupon coupon = null;
+       try {
+           getById(couponId);
+       }catch (NotExistException e){
+           e.printStackTrace();
+       }
+       Connection connection = pool.getConnection();
+        String sqlSelect = "SELECT * FROM COUPONS WHERE ID = ?";
+        String sqlInsert = "INSERT INTO CUSTOMERS_VS_COUPONS(CUSTOMER_ID,COUPON_ID) VALUES(?,?)";
+
+       try(PreparedStatement selectPstmt = connection.prepareStatement(sqlSelect);
+       PreparedStatement insertPstmt = connection.prepareStatement(sqlInsert)) {
+
+           selectPstmt.setLong(1,couponId);
+           ResultSet resultSet = selectPstmt.executeQuery();
+           while (resultSet.next()){
+               coupon = buildCoupon(resultSet);
+           }
+           if (coupon == null) return null;
+           insertPstmt.setLong(1,customerId);
+           insertPstmt.setLong(2,couponId);
+
+           insertPstmt.executeUpdate();
+       }catch (SQLException e){
+           e.printStackTrace();
+       }
+       finally {
+           pool.returnConnection(connection);
+       }
+        return coupon;
+    }
+
+    @Override
+    public Coupon deleteCouponPurchase(long customerId, long couponId) {
+     Coupon coupon =null;
+     Connection connection = pool.getConnection();
+     String sql = "DELETE FROM CUSTOMERS_VS_COUPONS WHERE CUSTOMER_ID = ? AND COUPON_ID = ?";
+     try(PreparedStatement pstmt = connection.prepareStatement(sql)) {
+
+         pstmt.setLong(1,customerId);
+         pstmt.setLong(2,couponId);
+         pstmt.executeUpdate();
+     }catch (SQLException e){
+         e.printStackTrace();
+     }
+     finally {
+         pool.returnConnection(connection);
+     }
+        return coupon;
+    }
 
     @Override
     public Coupon create(Coupon coupon) throws AlreadyExistException {
@@ -69,14 +123,14 @@ public class CouponDBDAO implements CouponDAO {
     }
 
     @Override
-    public Coupon getById(long id) throws NotExistException {
+    public Coupon getById(long couponId) throws NotExistException {
 
         Connection connection = pool.getConnection();
         Coupon coupon = null;
         String sql = "SELECT * FROM COUPONS WHERE ID = ?";
 
         try(PreparedStatement pstmt = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
-            pstmt.setLong(1,id);
+            pstmt.setLong(1,couponId);
 
             ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()){
@@ -95,8 +149,7 @@ public class CouponDBDAO implements CouponDAO {
     public Coupon update(Coupon coupon) throws NotExistException {
 
         Connection connection = pool.getConnection();
-        Coupon coupon1 = null;
-        String sql = "UPDATE FROM COUPONS SET TITLE = ?,DESCRIPTION = ?,AMOUNT = ?,PRICE = ?,IMAGE = ?" +
+        String sql = "UPDATE COUPONS SET TITLE = ?,DESCRIPTION = ?,AMOUNT = ?,PRICE = ?,IMAGE = ?" +
                 "WHERE ID = ?";
         try(PreparedStatement pstmt = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
             pstmt.setString(1,coupon.getTitle());
@@ -104,26 +157,24 @@ public class CouponDBDAO implements CouponDAO {
             pstmt.setInt(3,coupon.getAmount());
             pstmt.setDouble(4,coupon.getPrice());
             pstmt.setLong(5,coupon.getId());
-
             pstmt.executeUpdate();
-            ResultSet resultSet = pstmt.getGeneratedKeys();
-            if (resultSet.next()){
-                coupon1 = buildCoupon(resultSet);
-            }
         }catch (SQLException e){
             e.printStackTrace();
         }
         finally {
             pool.returnConnection(connection);
         }
-        return coupon1;
+        return coupon;
     }
 
     @Override
-    public Coupon delete(long id) throws NotExistException {
+    public Coupon delete(long couponId) throws NotExistException {
 
+        Coupon coupon = getById(couponId);
+        if (coupon == null){
+            return null;
+        }
      Connection connection = pool.getConnection();
-     Coupon coupon = null;
      String sql = "DELETE FROM COUPONS WHERE ID = ?";
      try(PreparedStatement pstmt = connection.prepareStatement(sql)){
          pstmt.setLong(1,coupon.getId());

@@ -9,6 +9,8 @@ import java.util.List;
 public interface CustomerDAO {
 
 
+    boolean isCustomerExist(String email,String password) throws NotExistException;
+
     Customer create(Customer customer) throws AlreadyExistException;
 
     Customer getById(long id) throws NotExistException;
@@ -17,7 +19,7 @@ public interface CustomerDAO {
 
     Customer update(Customer customer) throws NotExistException;
 
-    Customer delete(Customer customer) throws NotExistException;
+    Customer delete(long id) throws NotExistException;
 
     List<Customer> getAll();
 }

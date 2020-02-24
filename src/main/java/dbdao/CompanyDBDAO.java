@@ -31,7 +31,6 @@ public class CompanyDBDAO implements CompanyDAO {
     public boolean isCompanyExist(String email, String password) throws NotExistException, ValidException {
 
         boolean isCompanyExist = false;
-        Company company = null;
         Connection connection = pool.getConnection();
         String sql = "select * from COMPANIES WHERE EMAIL = ? and PASSWORD = ?";
 
@@ -42,21 +41,11 @@ public class CompanyDBDAO implements CompanyDAO {
 
             ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()) {
-                company = buildCompany(resultSet);
+             Company company = buildCompany(resultSet);
                 isCompanyExist = true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
-
-        if (company == null) {
-            throw new NotExistException("this company are mot exist");
-        }
-        if (!email.equals(company.getEmail()) && password.equals(company.getPassword())) {
-            throw new ValidException("your email is not good, please try again");
-        }
-        if (email.equals(company.getEmail()) && !password.equals(company.getPassword())) {
-            throw new ValidException("your password is not good, try again");
-        }
     }finally{
         pool.returnConnection(connection);
     }
@@ -144,8 +133,7 @@ public class CompanyDBDAO implements CompanyDAO {
         }
 
         Connection connection = pool.getConnection();
-        Company company1 = null;
-        String sql = "UPDATE FROM COMPANIES SET NAME = ?,EMAIL = ?, PASSOWRD = ?" +
+        String sql = "UPDATE COMPANIES SET NAME = ?,EMAIL = ?, PASSOWRD = ?" +
                 "WHERE ID = ?";
         try(PreparedStatement pstmt = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
 
@@ -154,11 +142,6 @@ public class CompanyDBDAO implements CompanyDAO {
             pstmt.setString(3,company.getPassword());
             pstmt.setLong(4,company.getId());
             pstmt.executeUpdate();
-
-            ResultSet resultSet = pstmt.getGeneratedKeys();
-            if (resultSet.next()){
-                company1 = buildCompany(resultSet);
-            }
         } catch (SQLException e){
             e.printStackTrace();
         } finally {

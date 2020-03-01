@@ -92,8 +92,6 @@ public class Coupon {
         this.startDate = startDate;
     }
 
-
-
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
@@ -137,4 +135,5 @@ public class Coupon {
                 ", image='" + image + '\'' +
                 '}';
     }
+
 }

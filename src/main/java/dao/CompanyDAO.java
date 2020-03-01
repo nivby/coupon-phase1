@@ -5,9 +5,11 @@ import exception.AlreadyExistException;
 import exception.NotExistException;
 import exception.ValidException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface CompanyDAO {
+
 
 
     boolean isCompanyExist(String email, String password) throws NotExistException, ValidException;
@@ -16,7 +18,9 @@ public interface CompanyDAO {
 
     Company getByID(long id) throws NotExistException;
 
-    Company getByName(String name) throws NotExistException;
+    Company getByName(String name);
+
+    Company getByEmail(String email);
 
     Company update(Company company) throws NotExistException;
 

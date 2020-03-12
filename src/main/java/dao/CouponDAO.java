@@ -12,6 +12,12 @@ import java.util.List;
 public interface CouponDAO {
 
 
+    boolean existByTitle(String title);
+
+    boolean deleteAllCouponOfCompany(long companyId);
+
+    boolean deleteFromCustomerAndCoupon(long couponId) throws NotExistException;
+
     Coupon updateEndDate(long companyId, long couponId, LocalDate endDate) throws NotExistException;
 
     Coupon updateAmount(long companyId,long couponId, int amount) throws NotExistException;

@@ -2,6 +2,7 @@ package dbdao;
 
 import dao.CompanyDAO;
 import entities.Company;
+import entities.Coupon;
 import exception.AlreadyExistException;
 import exception.NotExistException;
 import exception.ValidException;
@@ -32,7 +33,7 @@ public class CompanyDBDAO implements CompanyDAO {
 
 
     @Override
-    public boolean isCompanyExist(String email, String password) throws NotExistException, ValidException {
+    public boolean existByEmailAndPassword(String email, String password){
 
         boolean isCompanyExist = false;
         Connection connection = pool.getConnection();
@@ -92,12 +93,11 @@ public class CompanyDBDAO implements CompanyDAO {
 
             ResultSet resultSet = pstmt.executeQuery();
 
-            while (resultSet.next()) {
-                String name = resultSet.getString(2);
-                String email = resultSet.getString(3);
-                String password = resultSet.getString(4);
-                company = new Company(name, email, password);
+            if(resultSet.next()) {
+                company = buildCompany(resultSet);
+                System.out.println(company);
             }
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -126,7 +126,6 @@ public class CompanyDBDAO implements CompanyDAO {
         }
         return company;
     }
-
 
     @Override
     public Company getByEmail(String email) {
@@ -175,6 +174,30 @@ public class CompanyDBDAO implements CompanyDAO {
     }
 
     @Override
+    public Company updateEmailAndPassword(Company company) throws NotExistException {
+
+        if (getByID(company.getId()) == null) {
+            throw new NotExistException("this id is not exist ");
+        }
+
+        Connection connection = pool.getConnection();
+        String sql = "UPDATE COMPANIES SET EMAIL = ?, PASSWORD = ?" +
+                "WHERE ID = ?";
+        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
+            pstmt.setString(1,company.getEmail());
+            pstmt.setString(2,company.getPassword());
+            pstmt.setLong(3,company.getId());
+            pstmt.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            pool.returnConnection(connection);
+        }
+        return company;
+    }
+
+    @Override
     public Company delete(long companyId) throws NotExistException {
 
         if (getByID(companyId) == null) {
@@ -188,12 +211,6 @@ public class CompanyDBDAO implements CompanyDAO {
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setLong(1, companyId);
             pstmt.executeUpdate();
-
-            ResultSet resultSet = pstmt.executeQuery();
-            if (resultSet.next()) {
-                company = buildCompany(resultSet);
-            }
-
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -204,7 +221,7 @@ public class CompanyDBDAO implements CompanyDAO {
     }
 
     @Override
-    public List<Company> getAll() {
+    public List<Company> getAllCompanies() {
 
         Connection connection = pool.getConnection();
         List<Company> companiesList = new ArrayList<>();
@@ -226,8 +243,15 @@ public class CompanyDBDAO implements CompanyDAO {
         return companiesList;
     }
 
+
     @Override
-    public boolean logIn(String name, String password) {
-        return false;
+    public boolean logIn(String email, String password) {
+    boolean isExist = false;
+
+    if (existByEmailAndPassword(email,password)){
+        isExist = true;
+        return isExist; }
+
+    return isExist;
     }
 }

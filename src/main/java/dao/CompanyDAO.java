@@ -1,6 +1,7 @@
 package dao;
 
 import entities.Company;
+import entities.Coupon;
 import exception.AlreadyExistException;
 import exception.NotExistException;
 import exception.ValidException;
@@ -12,7 +13,7 @@ public interface CompanyDAO {
 
 
 
-    boolean isCompanyExist(String email, String password) throws NotExistException, ValidException;
+    boolean existByEmailAndPassword(String email, String password);
 
     Company create(Company company) throws AlreadyExistException;
 
@@ -24,10 +25,14 @@ public interface CompanyDAO {
 
     Company update(Company company) throws NotExistException;
 
+    Company updateEmailAndPassword(Company company) throws NotExistException;
+
     Company delete(long id) throws NotExistException;
 
-    List<Company> getAll();
+    List<Company> getAllCompanies();
+
 
     boolean logIn(String email,String password);
 
 }
+

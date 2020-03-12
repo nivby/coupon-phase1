@@ -15,6 +15,8 @@ public interface CustomerDAO {
 
     Customer getById(long id) throws NotExistException;
 
+    Customer getByEmail(String email) throws NotExistException;
+
     Customer getByName(String firstName,String lastName) throws NotExistException;
 
     Customer update(Customer customer) throws NotExistException;

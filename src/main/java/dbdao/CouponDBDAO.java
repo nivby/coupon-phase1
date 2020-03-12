@@ -8,6 +8,7 @@ import exception.LimitException;
 import exception.NotExistException;
 import pool.ConnectionPool;
 
+import java.security.spec.PSSParameterSpec;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class CouponDBDAO implements CouponDAO {
     public CouponDBDAO(){
         pool = ConnectionPool.getInstance();
     }
+
 
 
     private Coupon buildCoupon(ResultSet resultSet) throws SQLException{
@@ -35,6 +37,81 @@ public class CouponDBDAO implements CouponDAO {
         String image = resultSet.getString(10);
         return  new Coupon(id,companyId,categoryId,title,description,startDate,endDate,amount,price,image);
     }
+
+    @Override
+    public boolean existByTitle(String title) {
+
+        boolean isExist = false;
+        Coupon coupon = null;
+        Connection connection = pool.getConnection();
+        String sql = "SELECT  * FROM COUPONS WHERE TITLE = ?";
+
+        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
+
+            pstmt.setString(1,title);
+
+            ResultSet resultSet = pstmt.executeQuery();
+            if (resultSet.next()){
+                coupon = buildCoupon(resultSet);
+                isExist = true;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            pool.returnConnection(connection);
+        }
+        return isExist;
+    }
+
+    @Override
+    public boolean deleteAllCouponOfCompany(long companyId) {
+        boolean isdelete = false;
+        List<Coupon> newList = new ArrayList<>();
+        Connection connection = pool.getConnection();
+        String sql = "delete from coupons where COMPANY_ID = ?";
+
+        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
+
+            pstmt.setLong(1,companyId);
+            pstmt.executeUpdate();
+            isdelete = true;
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            pool.returnConnection(connection);
+        }
+        return isdelete;
+    }
+
+    @Override
+    public boolean deleteFromCustomerAndCoupon(long couponId) throws NotExistException {
+
+       Coupon coupon = getById(couponId);
+       if (coupon == null){
+
+           throw new NotExistException("this id " + couponId + " is not exist");
+       }
+
+        boolean isDeleted = false;
+        Connection connection = pool.getConnection();
+        String sql = "delete from CUSTOMERS_VS_COUPONS WHERE COUPON_ID = ?";
+
+        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
+
+            pstmt.setLong(1,couponId);
+            pstmt.executeUpdate();
+            isDeleted = true;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            pool.returnConnection(connection);
+        }
+        return isDeleted;
+    }
+
 
     @Override
     public Coupon updateEndDate(long companyId, long couponId, LocalDate endDate) throws NotExistException {
@@ -292,11 +369,6 @@ public class CouponDBDAO implements CouponDAO {
      try(PreparedStatement pstmt = connection.prepareStatement(sql)){
          pstmt.setLong(1,coupon.getId());
          pstmt.executeUpdate();
-
-         ResultSet resultSet = pstmt.executeQuery();
-         if (resultSet.next()){
-             coupon = buildCoupon(resultSet);
-         }
      }catch (SQLException e){
          e.printStackTrace();
      }

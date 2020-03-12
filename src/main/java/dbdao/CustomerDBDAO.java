@@ -92,8 +92,33 @@ public class CustomerDBDAO implements CustomerDAO {
 
             pstmt.setLong(1,id);
             ResultSet resultSet = pstmt.executeQuery();
-            while(resultSet.next()){
+            if(resultSet.next()){
                 customer = buildCustomer(resultSet);
+                System.out.println(customer);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            pool.returnConnection(connection);
+        }
+        return customer;
+    }
+
+    @Override
+    public Customer getByEmail(String email) throws NotExistException {
+
+        Connection connection = pool.getConnection();
+        Customer customer = null;
+        String sql = "SELECT * FROM CUSTOMERS WHERE EMAIL = ?";
+
+        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
+            pstmt.setString(1,email);
+
+            ResultSet resultSet = pstmt.executeQuery();
+            if (resultSet.next()){
+                customer = buildCustomer(resultSet);
+                System.out.println(customer);
             }
         }catch (SQLException e){
             e.printStackTrace();

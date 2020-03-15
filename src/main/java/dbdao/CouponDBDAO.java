@@ -112,6 +112,40 @@ public class CouponDBDAO implements CouponDAO {
         return isDeleted;
     }
 
+    @Override
+    public Coupon updateCouponWithOutIdAndCompanyId(Coupon coupon) throws NotExistException {
+
+       if (getById(coupon.getId()) == null) {
+           throw new NotExistException("this id is not exist");
+       }
+
+       Connection connection = pool.getConnection();
+       String sql = "UPDATE COUPONS SET CATEGORY_ID = ?,TITLE = ?,DESCRIPTION = ?,START_DATE = ?,END_DATE = ?,AMOUNT = ?,PRICE = ?,IMAGE = ?" +
+               "WHERE COMPANY_ID IN (SELECT ID FROM COMPANIES WHERE ID = ?) AND ID = ?";
+
+       try(PreparedStatement pstmt = connection.prepareStatement(sql)){
+
+           pstmt.setLong(1,coupon.getCategoryId());
+           pstmt.setString(2,coupon.getTitle());
+           pstmt.setString(3,coupon.getDescription());
+           pstmt.setDate(4, Date.valueOf(coupon.getStartDate()));
+           pstmt.setDate(5, Date.valueOf(coupon.getEndDate()));
+           pstmt.setInt(6,coupon.getAmount());
+           pstmt.setDouble(7,coupon.getPrice());
+           pstmt.setString(8,coupon.getImage());
+           pstmt.setLong(9,coupon.getCompanyId());
+           pstmt.setLong(10,coupon.getId());
+
+           pstmt.executeUpdate();
+       }catch (SQLException e){
+           e.printStackTrace();
+       }
+      finally {
+           pool.returnConnection(connection);
+       }
+        return coupon;
+    }
+
 
     @Override
     public Coupon updateEndDate(long companyId, long couponId, LocalDate endDate) throws NotExistException {

@@ -18,6 +18,8 @@ public interface CouponDAO {
 
     boolean deleteFromCustomerAndCoupon(long couponId) throws NotExistException;
 
+    Coupon updateCouponWithOutIdAndCompanyId(Coupon coupon) throws NotExistException;
+
     Coupon updateEndDate(long companyId, long couponId, LocalDate endDate) throws NotExistException;
 
     Coupon updateAmount(long companyId,long couponId, int amount) throws NotExistException;

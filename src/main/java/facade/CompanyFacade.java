@@ -7,6 +7,7 @@ import dbdao.CouponDBDAO;
 import entities.Company;
 import entities.Coupon;
 import exception.AlreadyExistException;
+import exception.NotExistException;
 import exception.NotLoggedInException;
 import pool.ConnectionPool;
 
@@ -40,14 +41,20 @@ public class CompanyFacade implements ClientFacade {
         if (!isLoggedIn){
             throw new NotLoggedInException("first you need to log-in");
         }
-        boolean isExistTitle = false;
         if (!couponDAO.existByTitle(coupon.getTitle())){
-            isExistTitle = true;
             return couponDAO.create(coupon);
         }
         System.out.println("there is a coupon with a same title... please insert a new title name");
         return null;
     }
 
-    
+    public Coupon updateCoupon(Coupon coupon) throws NotLoggedInException, NotExistException {
+
+        if (!isLoggedIn) {
+            throw new NotLoggedInException("you need to login first please");
+        }
+
+        return couponDAO.updateCouponWithOutIdAndCompanyId(coupon);
+
+    }
 }

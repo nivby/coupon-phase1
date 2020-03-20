@@ -2,10 +2,13 @@ package facade;
 
 import dao.CompanyDAO;
 import dao.CouponDAO;
+import dao.CustomerDAO;
 import dbdao.CompanyDBDAO;
 import dbdao.CouponDBDAO;
+import dbdao.CustomerDBDAO;
 import entities.Company;
 import entities.Coupon;
+import entities.Customer;
 import exception.AlreadyExistException;
 import exception.NotExistException;
 import exception.NotLoggedInException;
@@ -19,14 +22,18 @@ import java.sql.SQLException;
 public class CompanyFacade implements ClientFacade {
 
 
+    private long companyid;
+
     private CompanyDAO companyDAO;
     private CouponDAO couponDAO;
+    private CustomerDAO customerDAO;
     private boolean isLoggedIn;
 
 
     public CompanyFacade() {
         this.companyDAO = new CompanyDBDAO();
         this.couponDAO = new CouponDBDAO();
+        this.customerDAO = new CustomerDBDAO();
         this.isLoggedIn = false;
     }
 
@@ -34,6 +41,10 @@ public class CompanyFacade implements ClientFacade {
     @Override
     public boolean logIn(String email, String password) {
        isLoggedIn = companyDAO.logIn(email,password);
+       if (isLoggedIn){
+           companyid = companyDAO.getByEmail(email).getId();
+       }
+
        return isLoggedIn;}
 
     public Coupon createCoupon(Coupon coupon) throws NotLoggedInException,AlreadyExistException {
@@ -57,4 +68,29 @@ public class CompanyFacade implements ClientFacade {
         return couponDAO.updateCouponWithOutIdAndCompanyId(coupon);
 
     }
+
+    public Company getInfo() throws NotLoggedInException, NotExistException {
+
+        if (!isLoggedIn){
+            throw new NotLoggedInException("first please log in");
+        }
+
+        return companyDAO.getByID(companyid);
+    }
+
+    public void deleteCoupon(long couponId) throws NotLoggedInException, NotExistException{
+
+        if (!isLoggedIn){
+            throw new NotLoggedInException("first you need to log in ! ");
+        }
+        if (couponDAO.getById(couponId) == null){
+            throw new NotExistException("this coupon is not exist ! please try another one ! ");
+        }
+
+        for (Customer current: customerDAO.getAll()) {
+        couponDAO.deleteCouponPurchase(current.getId(),couponId);
+        }
+    }
+
 }
+

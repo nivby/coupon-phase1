@@ -435,4 +435,57 @@ public class CouponDBDAO implements CouponDAO {
        }
         return couponList;
     }
+
+    @Override
+    public List<Coupon> couponofCompanyById(long companyId) throws NotExistException {
+
+        List<Coupon> newList = new ArrayList<>();
+        Connection connection = pool.getConnection();
+        String sql = "select * from coupons where company_id in (select id from companies where id = ?)";
+
+        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
+
+            pstmt.setLong(1,companyId);
+            ResultSet resultSet = pstmt.executeQuery();
+            while (resultSet.next()){
+                newList.add(buildCoupon(resultSet));
+                for (Coupon current:newList) {
+                    System.out.println(current);
+                }
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            pool.returnConnection(connection);
+        }
+        return newList;
+    }
+
+    @Override
+    public List<Coupon> couponByPrice(double price) throws NotExistException {
+
+        Connection connection = pool.getConnection();
+        List<Coupon> newList = new ArrayList<>();
+        String sql = "select * from coupons where price > ?";
+
+        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
+
+            pstmt.setDouble(1,price);
+            ResultSet resultSet = pstmt.executeQuery();
+
+            while (resultSet.next()){
+                newList.add(buildCoupon(resultSet));
+                for (Coupon current:newList) {
+                    System.out.println(current);
+                }
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            pool.returnConnection(connection);
+        }
+        return newList;
+    }
 }

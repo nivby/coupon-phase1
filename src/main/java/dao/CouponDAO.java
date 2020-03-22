@@ -44,5 +44,9 @@ public interface CouponDAO {
 
     List<Coupon> getall();
 
+    List<Coupon> couponofCompanyById(long companyId)throws NotExistException;
+
+    List<Coupon> couponByPrice(double price) throws NotExistException;
+
 
 }

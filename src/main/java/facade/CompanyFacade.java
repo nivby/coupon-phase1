@@ -18,6 +18,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompanyFacade implements ClientFacade {
 
@@ -92,5 +94,23 @@ public class CompanyFacade implements ClientFacade {
         }
     }
 
-}
+    public List<Coupon> couponOfCompany()throws NotLoggedInException, NotExistException {
 
+        if (!isLoggedIn){
+            throw new NotLoggedInException("please log in first ! ");
+        }
+        List<Coupon> newList = new ArrayList<>();
+             return couponDAO.couponofCompanyById(companyid);
+
+    }
+
+    public List<Coupon> couponByPrice(double price) throws NotLoggedInException, NotExistException{
+
+        if (!isLoggedIn){
+            throw new NotLoggedInException("please log in first !!!");
+        }
+
+        return couponDAO.couponByPrice(price);
+    }
+
+}
